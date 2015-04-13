@@ -1,0 +1,17 @@
+<%= image_tag "die_#{@die1}.png" %>
+<%= image_tag "die_#{@die2}.png" %>
+<br>
+<% if @state == "new" %>
+    Your goal is now <%= @goal %>.<br>
+    Now try to get <%= @goal %> before you roll a 7.<br>
+    <a href="/dice/roll?goal=<%= @goal %>">Roll</a>
+<% elsif @state == "roll" %>
+    Your goal is <%= @goal %> but you rolled <%= @roll %>. You can roll again.<br>
+    <a href="/dice/roll?goal=<%= @goal %>">Roll</a>
+<% elsif @state == "win" %>
+    YOU WIN!<br>
+    <a href="/dice">Play Again</a>
+<% elsif @state == "lose" %>
+    YOU LOSE.<br>
+    <a href="/dice">Play Again</a>
+<% end %>

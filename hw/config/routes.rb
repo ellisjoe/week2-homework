@@ -8,4 +8,7 @@ Rails.application.routes.draw do
     get '/rps' => 'rps#index'
     get '/rps/play' => 'rps#play'
 
+    get '/dice' => 'dice#index'
+    get '/dice/roll' => 'dice#roll'
+
 end
